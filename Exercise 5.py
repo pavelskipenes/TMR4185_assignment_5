@@ -96,7 +96,8 @@ def plot_frequencies(m1,m2,k1,k2,k3,c1,c2,c3,F1_abs,F1_phase,F2_abs,F2_phase):
     plt.title("Displacement with load frequencies between 0.1 to 5 [rad/sec], for m_1 (nat. freq: 1.24)")
     plt.legend()
     plt.grid(True)
-    plt.show()
+    plt.savefig("m_1_plot.svg")
+
     
     plt.figure(figsize=(10, 6))
     for i in w:
@@ -108,11 +109,9 @@ def plot_frequencies(m1,m2,k1,k2,k3,c1,c2,c3,F1_abs,F1_phase,F2_abs,F2_phase):
     plt.title("Displacement with load frequencies between 0.1 to 5 [rad/sec], for m_2 (nat. freq: 0.77)")
     plt.legend()
     plt.grid(True)
-    plt.show()
+
+    plt.savefig("m_2_plot.svg")
     return 0
-
-
-
 
 print(plot_frequencies(m1,m2,k1,k2,k3,c1,c2,c3,F1_abs,F1_phase,F2_abs,F2_phase))
 
@@ -128,9 +127,19 @@ plt.legend()
 plt.grid(True)
 plt.savefig("2b.svg")
 
-theta=np.linspace(w_1,w_2,11)
+theta=np.linspace(0,2*np.pi,11)
 print(theta)
 
+plt.figure(figsize=(10, 6))
+for i in theta:
+    x_1,x_2,a,b=twocarts(m1,m2,k1,k2,k3,c1,c2,c3,F1_abs,F1_phase,F2_abs,i,omega)
+    plt.plot(t, x_2, label=round(i,2))
+    plt.xlabel("Tid (s)")
+    plt.ylabel("Forskyvning (m)")
+plt.title("Response for m_2, phase [rad], w=1")
+plt.legend()
+plt.grid(True)
+plt.savefig("2e.svg")
 
-
-
+theta=np.linspace(w_1,w_2,11)
+print(theta)
