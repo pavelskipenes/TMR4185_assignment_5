@@ -97,6 +97,7 @@ def plot_frequencies(m1,m2,k1,k2,k3,c1,c2,c3,F1_abs,F1_phase,F2_abs,F2_phase):
     plt.legend()
     plt.grid(True)
     plt.savefig("m_1_plot.svg")
+
     
     plt.figure(figsize=(10, 6))
     for i in w:
@@ -108,11 +109,9 @@ def plot_frequencies(m1,m2,k1,k2,k3,c1,c2,c3,F1_abs,F1_phase,F2_abs,F2_phase):
     plt.title("Displacement with load frequencies between 0.1 to 5 [rad/sec], for m_2 (nat. freq: 0.77)")
     plt.legend()
     plt.grid(True)
+
     plt.savefig("m_2_plot.svg")
     return 0
-
-
-
 
 print(plot_frequencies(m1,m2,k1,k2,k3,c1,c2,c3,F1_abs,F1_phase,F2_abs,F2_phase))
 
@@ -142,8 +141,5 @@ plt.legend()
 plt.grid(True)
 plt.savefig("2e.svg")
 
-
-
-
-
-
+theta=np.linspace(w_1,w_2,11)
+print(theta)
