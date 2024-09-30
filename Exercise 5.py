@@ -126,7 +126,7 @@ plt.ylabel("Forskyvning (m)")
 plt.title("2b, x1 og x2")
 plt.legend()
 plt.grid(True)
-plt.show()
+plt.savefig("2b.svg")
 
 theta=np.linspace(w_1,w_2,11)
 print(theta)
